@@ -1,0 +1,212 @@
+body._lock {
+   overflow: hidden;
+}
+
+.header {
+   padding: 20px 0px;
+}
+
+.header__container {
+   min-height: 142px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.header__logo {
+   align-self: start;
+   height: 105px;
+
+   img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+}
+
+.header__menu-icon {}
+
+.header__menu {}
+
+.header__list {
+   display: flex;
+   gap: 70px;
+}
+
+.header__link {
+   display: inline-block;
+   color: rgb(21, 22, 24);
+   font-family: Open Sans;
+   font-size: 18px;
+   font-weight: 400;
+
+}
+
+
+.icons-header {
+   display: flex;
+
+   li:nth-child(1) {
+      margin-right: 20px;
+   }
+
+   li:nth-child(2) {
+      margin-right: 100px;
+   }
+}
+
+.icons-header__link {
+   display: inline-block;
+
+}
+
+//======= Бургер ===========//
+
+.header__menu-icon {
+   width: 40px;
+   height: 20px;
+   position: relative;
+   top: 0;
+   left: 0;
+
+   display: none;
+   flex-direction: column;
+   justify-content: space-between;
+
+   span {
+      width: 100%;
+      height: 2px;
+      background: #000;
+   }
+}
+
+.menu-icon__mobile {
+   display: none;
+   position: relative;
+   top: 20px;
+   right: 25px;
+   width: 30px;
+   height: 18px;
+   cursor: pointer;
+   align-self: end;
+}
+
+.menu-icon__mobile:after,
+.menu-icon__mobile:before {
+   content: "";
+   position: absolute;
+   right: 0;
+   height: 10%;
+   width: 100%;
+   transition: all 0.3s ease;
+   background: rgb(117, 78, 41);
+}
+
+.menu-icon__mobile {
+   &:after {
+      bottom: 50%;
+      transform: rotate(45deg) translate(0, 50%);
+   }
+
+   &:before {
+      top: 50%;
+      transform: rotate(-45deg) translate(0, -50%);
+   }
+}
+
+
+//===================//
+@media(max-width: 991.98px) {
+   .header__container {
+      min-height: 104px;
+   }
+
+   .header__menu {
+      display: none;
+   }
+
+   .header__menu-icon {
+      display: flex;
+      order: -1;
+      margin-left: 44px;
+   }
+
+   .menu-icon__mobile {
+      display: block;
+   }
+
+   .icons-header li:nth-child(2) {
+      margin-right: 50px;
+   }
+
+
+   // меню
+
+   .header__menu {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      top: -200%;
+      right: 0;
+      width: 100%;
+      transition: all 1s ease;
+   }
+
+   .header__menu._active {
+      top: 0;
+   }
+
+   .header__list {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      min-width: 360px;
+      width: 90%;
+      background: rgb(247, 242, 234);
+      padding: 0 0 60px 0;
+      transition: all 0.3s ease;
+      overflow: auto;
+      border-radius: 0 0 10px 10px;
+   }
+
+   .header__list li {
+      padding: 0 0 30px 0px;
+      margin-left: 0px;
+      display: flex;
+      flex-wrap: wrap;
+   }
+
+   .header__link {
+      color: #fff;
+      color: rgb(0, 0, 0);
+      font-family: Cormorant;
+      font-size: 24px;
+      font-weight: 400;
+   }
+
+}
+
+
+@media(max-width: 767.98px) {
+   .header {
+      padding: 10px 0;
+   }
+
+   .header__container {
+      min-height: 56px;
+   }
+
+   .header__logo {
+      align-self: center;
+      height: 56px;
+   }
+
+   .icons-header li:nth-child(2) {
+      margin-right: 20px;
+   }
+
+   .header__menu-icon {
+      margin-left: 0px;
+   }
+
+}
